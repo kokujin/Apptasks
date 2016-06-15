@@ -1,11 +1,12 @@
 {
   "name": "apptasks",
   "version": "0.1.0",
-  "description": "My rad module",
+  "description": "AppTasks allows ypu to load and start functions before your application starts
+  and after your application ends.",
   "license": "MIT",
   "repository": "kokujin/apptasks",
   "author": {
-    "name": "Sharriff Aina",
+    "name": "kokujin",
     "email": "nhytro@googlemail.com",
     "url": "github.com/kokujin"
   },
@@ -19,7 +20,7 @@
     "index.js"
   ],
   "keywords": [
-    "Hooks, tasks"
+    "Hooks, tasks", "initializers", "finalizers"
   ],
   "dependencies": {
     "require-directory": "^2.1.1",
