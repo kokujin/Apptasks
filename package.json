@@ -1,38 +1,38 @@
 {
-  "name": "apptasks",
-  "version": "0.1.0",
-  "description": "AppTasks allows ypu to load and start functions before your application starts
-  and after your application ends.",
-  "license": "MIT",
-  "repository": "kokujin/apptasks",
-  "author": {
-    "name": "kokujin",
-    "email": "nhytro@googlemail.com",
-    "url": "github.com/kokujin"
-  },
-  "engines": {
-    "node": ">=0.10.0"
-  },
-  "scripts": {
-    "test": "xo && ava"
-  },
-  "files": [
+    "name": "apptasks",
+    "version": "0.1.0",
+    "description": "AppTasks allows you to load and run functions before your application starts
+    and after your application ends.",
+    "license": "MIT",
+    "repository": "kokujin/apptasks",
+    "author": {
+        "name": "kokujin",
+        "email": "nhytro@googlemail.com",
+        "url": "github.com/kokujin"
+    },
+    "engines": {
+        "node": ">=0.10.0"
+    },
+    "scripts": {
+        "test": "xo && ava"
+    },
+    "files": [
     "index.js"
   ],
-  "keywords": [
+    "keywords": [
     "Hooks, tasks", "initializers", "finalizers"
   ],
-  "dependencies": {
-    "require-directory": "^2.1.1",
-    "run-series": "^1.1.4",
-    "series": "^0.3.3"
-  },
-  "devDependencies": {
-    "ava": "^0.15.1",
-    "xo": "^0.15.0"
-  },
-  "xo": {
-    "space": 4,
-    "semicolon": true
-  }
+    "dependencies": {
+        "require-directory": "^2.1.1",
+        "run-series": "^1.1.4",
+        "series": "^0.3.3"
+    },
+    "devDependencies": {
+        "ava": "^0.15.1",
+        "xo": "^0.15.0"
+    },
+    "xo": {
+        "space": 4,
+        "semicolon": true
+    }
 }
