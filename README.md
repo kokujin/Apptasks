@@ -46,4 +46,4 @@ Add functions that should be run when your application ends to this folder
 
 ## License
 
-MIT © [Sharriff Aina](https://github.com/kokujin)
+MIT © [kokujin](https://github.com/kokujin)
