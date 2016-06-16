@@ -99,7 +99,7 @@ function AppTasks(options) {
             });
         };
     } else {
-        console.log('Missing settings');
+        console.log('Missing or incompelte settings');
     }
 }
 
