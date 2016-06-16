@@ -50,8 +50,10 @@ null or an error.
 function moduleName(cb) {
     cb(null, 'Result');
 }
+
+module.exports = moduleName;
 ``````
-module.exports = mod1;
+
 
 
 ## License
