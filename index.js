@@ -3,12 +3,14 @@
 
 var util = require('util');
 var fs = require('fs');
+var chalk = require('chalk');
 var series = require('run-series');
 var requireDirectory = require('require-directory');
 
 function isDirSync(aPath) {
     try {
-        return fs.statSync(aPath).isDirectory();
+        return fs.statSync(aPath)
+            .isDirectory();
     } catch (e) {
         if (e.code === 'ENOENT') {
             return false;
@@ -18,19 +20,26 @@ function isDirSync(aPath) {
 
 function AppTasks(options) {
     var self = this;
+    var defaults = {
+        preFolder: 'pre',
+        postFolder: 'post',
+        DEBUG: false
+    };
 
-    self.preFolder = options && options.preFolder || 'pre';
-    self.postFolder = options && options.postFolder || 'post';
+    var optionsObj = Object.assign(defaults, options);
+
+    self.preFolder = optionsObj.preFolder;
+    self.postFolder = optionsObj.postFolder;
     if (isDirSync(self.preFolder) && isDirSync(self.postFolder)) {
         self.preModules = requireDirectory(module, self.preFolder);
         self.postModules = requireDirectory(module, self.postFolder);
         self.preFuncs = [];
         self.postFuncs = [];
-        self.DEBUG = options.DEBUG || false;
+        self.DEBUG = optionsObj.DEBUG || false;
         if (self.DEBUG) {
             console.log('----------------------------------');
             console.log('AppTasks initializing...');
-            console.log('AppTasks config: ', options);
+            console.log('AppTasks config: ', optionsObj);
             console.log('----------------------------------\n');
         }
 
@@ -99,7 +108,8 @@ function AppTasks(options) {
             });
         };
     } else {
-        console.log('Missing or incompelte settings');
+        self.errors = 'AppTasks :: Missing or incompelte settings';
+        console.log(chalk.red('AppTasks :: Missing or incompelte settings'));
     }
 }
 
