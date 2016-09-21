@@ -1,20 +1,17 @@
 import test from 'ava';
 import AppTasks from './';
 
-const taskRunner = new AppTasks({
-    preFolder: 'fixtures/pre',
-    postFolder: 'fixtures/post'
-});
+const taskRunner = new AppTasks('fixtures/pre', 'fixtures/post');
 
-taskRunner.start(function (state) {
-    if (state.results) {
-        global.startResult = state.results[0];
+taskRunner.start().then(function (results) {
+    if (results) {
+        global.startResult = results[0];
     }
 });
 
-taskRunner.end(function (state) {
-    if (state.results) {
-        global.endResult = state.results[0];
+taskRunner.end().then(function (results) {
+    if (results) {
+        global.endResult = results[0];
     }
 });
 
