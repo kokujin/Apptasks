@@ -1,6 +1,6 @@
 {
   "name": "apptasks",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "description": "AppTasks allows you to load and run functions before your application starts and after your application ends.",
   "license": "MIT",
   "repository": "kokujin/apptasks",
